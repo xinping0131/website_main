@@ -4,9 +4,9 @@ import os
 
 openai.api_key = os.getenv('OPENAI_API_KEY')
 
-@app.route('/generate',method=['POST'])
+@app.route('/generate',methods=['POST'])
 def generate():
-    prompt=request.form['promp']
+    prompt=request.form['prompt']
     response = openai.ChatCompletion.create(
         messages=[
             {"role":"user","content":prompt}
